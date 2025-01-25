@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OURHOOD</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 body {
   font-family: Arial, sans-serif;
@@ -36,16 +36,39 @@ header {
       width: 100%; /* Full width */
       margin-top: 140px;
     }
+    .events-box {
+      position: absolute;
+      top: 120px; /* Adjust position below the header */
+      right: 20px; /* Position it towards the upper-right corner */
+      background-color: white;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 250px;
+      padding: 1rem;
+      text-align: center;
+    }
 
+    .events-box h2 {
+      color: #4CAF50;
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+    }
+
+    .events-box p {
+      font-size: 1rem;
+      color: #333;
+      margin: 0.5rem 0;
+    }
 
     .container {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 3rem;
+      gap: 2rem;
       flex-wrap: wrap;
-      flex-grow: 1;
-      margin-top: 4rem;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
 
     .block {
@@ -54,9 +77,9 @@ header {
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       width: 25%;
-      min-width: 200px; /* Ensures the blocks stay readable on small screens */
+      min-width: 250px;
       text-align: center;
-      padding: 2rem;
+      padding: 1.5rem;
       transition: transform 0.3s ease;
       box-sizing: border-box;
     }
@@ -69,13 +92,19 @@ header {
     .block h2 {
       color: #4CAF50;
       margin-bottom: 1rem;
+      font-size: 1.5rem;
     }
 
+    .block p {
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
 
-    .add-donation-box {
+    .add-event-box {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
+      bottom: 20px;
+      right: 20px;
       background-color: #4CAF50;
       color: white;
       padding: 1rem 1.5rem;
@@ -84,6 +113,11 @@ header {
       font-size: 1rem;
       cursor: pointer;
       transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .add-event-box:hover {
+      transform: scale(1.1);
+      background-color: #45a049;
     }
     .event-box {
       position: fixed;
@@ -113,27 +147,33 @@ header {
       </div>
   </header>
   <div class="black-bar"></div>
+
   <div class="container">
     <div class="block">
-      <h2>Cloth</h2>
-      <p>Donate clothes for those in need.</p>
+      <h2>Blood Donation Camp</h2>
+      <p>Date: 30th January 2025</p>
+      <p>Location: Community Hall, Block A</p>
+      <p>Details: Donate blood and save lives. Open from 9 AM to 5 PM.</p>
     </div>
     <div class="block">
-      <h2>Books</h2>
-      <p>Share knowledge by donating books.</p>
+      <h2>Complete Body Checkup</h2>
+      <p>Date: 5th February 2025</p>
+      <p>Location: Local Health Center</p>
+      <p>Details: Free body checkup for all. Timings: 10 AM to 3 PM.</p>
     </div>
     <div class="block">
-      <h2>Furniture</h2>
-      <p>Help others furnish their homes.</p>
+      <h2>Awareness Camp</h2>
+      <p>Date: 12th February 2025</p>
+      <p>Location: Park Pavilion</p>
+      <p>Details: Join us to learn about health and hygiene. Starts at 11 AM.</p>
     </div>
   </div>
 
-  
-  <div class="add-donation-box">
-    Add Donation
+  <div class="add-event-box">
+    Add Event
   </div>
   <div class="event-box">
-    Donations
+    Events Corner
   </div>
 </body>
 </html>

@@ -58,6 +58,86 @@
     nav a i {
       margin-right: 0.5rem;
     }
+    .login-btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      text-align: center;
+    }
+
+    .login-btn:hover {
+      background-color: #45a049;
+    }
+    .logout-btn {
+      background-color: #f44336;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      text-align: center;
+      display: none; /* Initially hidden */
+    }
+
+    .logout-btn:hover {
+      background-color: #d32f2f;
+    }
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      justify-content: center;
+      align-items: center;
+      z-index: 1100;
+    }
+
+    .modal-content {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      width: 300px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    .modal input {
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      width: 100%;
+    }
+
+    .modal button {
+      padding: 0.5rem 1rem;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .modal button:hover {
+      background-color: #45a049;
+    }
+    .success-message {
+      color: green;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
 
     .slideshow {
       position: relative;
@@ -165,7 +245,93 @@
     <a href="#garbage"><i>🗑</i> Garbage Collection</a>
     <a href="events.html"><i>🎉</i> Events Corner</a>
     <a href="donation.html"><i>❤</i> Donations</a>
+
+    <a href="#" class="login-btn" id="loginBtn">Login</a>
   </nav>
+
+  <!-- Modal for Login -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeBtn">&times;</span>
+      <h2>Login</h2>
+      <form id="loginForm" onsubmit="handleSubmit(event)">
+        <input type="text" placeholder="Username" id="Username" required>
+        <input type="password" placeholder="Password" id="Password" required>
+        <button type="submit" id="loginBtn">Login</button>
+      </form>
+      <div id="successMessage" class="success-message" style="display: none;">
+        Logged in successfully!
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Get modal and button elements
+    const modal = document.getElementById('loginModal');
+    const loginBtn = document.getElementById('loginBtn');
+    const logoutBtn = document.getElementById('logoutBtn');
+    const closeBtn = document.getElementById('closeBtn');
+
+    const successMessage = document.getElementById('successMessage');
+
+    // Show the modal when the login button is clicked
+    loginBtn.onclick = function() {
+      modal.style.display = 'flex';
+    }
+
+    // Close the modal when the X button is clicked
+    closeBtn.onclick = function() {
+      modal.style.display = 'none';
+    }
+
+    // Close the modal if the user clicks outside the modal
+    window.onclick = function(event) {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    }
+    const handleSubmit = (event) => {
+      event.preventDefault();  // Prevent page refresh
+      // Get the values (can add validation here)
+      const loginForm = document.getElementById('loginForm');
+      console.log("handleSubmit")
+      const username = document.getElementById('Username').value;
+      const password = document.getElementById('Password').value;
+
+      // For demo purposes, we show the success message directly
+      // You can add validation here (checking the username/password)
+      
+      // Hide the login form and show the success message
+      loginForm.style.display = 'none';
+      successMessage.style.display = 'block';
+
+      // Optionally, close the modal after a few seconds (for demo purposes)
+      setTimeout(() => {
+        modal.style.display = 'none';  // Close modal after successful login
+
+      loginBtn.style.display = 'none';
+        logoutBtn.style.display = 'inline-block';
+      }, 2000);  // Delay before modal closes
+    }
+    // loginForm.onsubmit = function(event) {
+    //   event.preventDefault();  // Prevent page refresh
+    //   // Get the values (can add validation here)
+    //   const username = document.getElementById('username').value;
+    //   const password = document.getElementById('password').value;
+
+    //   // For demo purposes, we show the success message directly
+    //   // You can add validation here (checking the username/password)
+      
+    //   // Hide the login form and show the success message
+    //   loginForm.style.display = 'none';
+    //   successMessage.style.display = 'block';
+
+    //   // Optionally, close the modal after a few seconds (for demo purposes)
+    //   setTimeout(() => {
+    //     modal.style.display = 'none';  // Close modal after successful login
+    //   }, 2000); // 2 seconds delay before closing the modal
+    // }
+  </script>
   
   <section class="slideshow">
     <div class="slides">
@@ -215,6 +381,7 @@
         aboutUsBox.style.display = "none";
       }
     }
+    
   </script>
 </body>
 </html>

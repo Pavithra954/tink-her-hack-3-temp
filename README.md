@@ -4,11 +4,11 @@
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: XYZ
 
 
 ### Team Members
-- Member 1: [Name] - [College]
+- Member 1: [PAVITHRA B] - [College]
 - Member 2: [Name] - [College]
 - Member 3: [Name] - [College]
 

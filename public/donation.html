@@ -277,6 +277,39 @@
     function showDonationForm() {
       document.getElementById('donation-form').classList.add('active');
     }
+    document.querySelector('form').addEventListener('submit', async (e) => {
+  e.preventDefault(); // Prevent form from refreshing the page
+
+  const formData = new FormData(e.target);
+
+  const data = {
+    name: formData.get('name'),
+    address: formData.get('address'),
+    phone: formData.get('phone'),
+    donationType: formData.get('donation-type'),
+  };
+
+  try {
+    const response = await fetch('http://localhost:3000/submit-donation', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.json();
+    if (response.ok) {
+      alert('Donation submitted successfully!');
+    } else {
+      alert(`Error: ${result.message}`);
+    }
+  } catch (error) {
+    console.error('Error submitting donation:', error);
+    alert('Failed to submit donation. Please try again.');
+  }
+});
+
   </script>
 </body>
 </html>

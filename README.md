@@ -1,16 +1,16 @@
 
 
-# [Project Name] 🎯
+# OURHOOD  🎯
 
 
-## Basic Details
+## Local Community Helper
 ### Team Name: XYZ
 
 
 ### Team Members
-- Member 1: [PAVITHRA B] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Member 1: [PAVITHRA B] - GEC Thrissur
+- Member 2: Megha Mariya Shinoj - Gec Thrissur
+- Member 3: Niranjana G S - GEC Thrissur
 
 ### Hosted Project Link
 [mention your project hosted project link here]

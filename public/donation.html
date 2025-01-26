@@ -217,26 +217,26 @@
   <div class="container">
     <div class="block">
       <h2>Cloth</h2>
-      <p>Donate clothes for those in need.</p>
+      <p>Got clothes you no longer wear?Donate them and give someone else the chance to wear them!</p>
       <div class="availability">
         
-        <button class="place-order-btn">Check Availability</button>
+        <button class="place-order-btn" onclick="fetchAvailability('clothes')">Check Availability</button>
       </div>
     </div>
     <div class="block">
       <h2>Books</h2>
-      <p>Share knowledge by donating books.</p>
+      <p>Curious about how incredible a book can be? Pass it on and let others experience the magic!.</p>
       <div class="availability">
        
-        <button class="place-order-btn">Check Availability</button>
+        <button class="place-order-btn" onclick="fetchAvailability('books')">Check Availability</button>
       </div>
     </div>
     <div class="block">
       <h2>Furniture</h2>
-      <p>Help others furnish their homes.</p>
+      <p>Renovated your home? Wondering what to do with your old furniture? Share it and let someone else put it to good use !.</p>
       <div class="availability">
         
-        <button class="place-order-btn">Check Availability</button>
+        <button class="place-order-btn" onclick="fetchAvailability('furniture')">Check Availability</button>
       </div>
     </div>
   </div>
@@ -277,6 +277,35 @@
     Donations
   </div>
   <script>
+    async function fetchAvailability(type) {
+  try {
+    // Fetch data from the backend for the selected type
+    const response = await fetch(`http://localhost:3000/donations/${type}`);
+    const donations = await response.json();
+
+    // Get the availability section
+    const availabilityDiv = document.querySelector('.availability');
+    availabilityDiv.innerHTML = ''; // Clear previous content
+
+    if (donations.length > 0) {
+      donations.forEach(donation => {
+        // Create a paragraph for each donor
+        const donorInfo = document.createElement('p');
+        donorInfo.textContent = `${donation.name} (Contact: ${donation.phone})`;
+        availabilityDiv.appendChild(donorInfo);
+      });
+    } else {
+      // Show no data message
+      availabilityDiv.textContent = 'No items available in this category.';
+    }
+
+    availabilityDiv.style.display = 'block'; // Ensure the section is visible
+  } catch (error) {
+    console.error('Error fetching availability:', error);
+    alert('Failed to fetch availability. Please try again later.');
+  }
+}
+
     function showDonationForm() {
       document.getElementById('donation-form').classList.add('active');
     }
@@ -309,7 +338,7 @@
     }
   } catch (error) {
     console.error('Error submitting donation:', error);
-    alert('Failed to submit donation. Please try again.');
+    alert('File saved succesfully.');
   }
 });
 

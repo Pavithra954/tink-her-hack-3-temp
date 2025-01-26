@@ -8,7 +8,7 @@
 
 
 ### Team Members
-- Member 1: [PAVITHRA B] - GEC Thrissur
+- Member 1: PAVITHRA B - GEC Thrissur
 - Member 2: Megha Mariya Shinoj - Gec Thrissur
 - Member 3: Niranjana G S - GEC Thrissur
 
@@ -16,7 +16,7 @@
 [mention your project hosted project link here]
 
 ### Project Description
-[2-3 lines about what your project does]
+This is a local community helper.We builded this for bringing whatever a locality needs under an umbrella.The important features are waste management,event organisation,donations,and many more .
 
 ### The Problem statement
 [What ridiculous problem are you solving?]

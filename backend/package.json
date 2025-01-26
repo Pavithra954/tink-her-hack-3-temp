@@ -1,0 +1,29 @@
+{
+  "name": "tink-her-hack-3-temp",
+  "version": "1.0.0",
+  "description": "- Member 1: [PAVITHRA B] - [College]\r - Member 2: [Name] - [College]\r - Member 3: [Name] - [College]",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pavithra954/tink-her-hack-3-temp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pavithra954/tink-her-hack-3-temp/issues"
+  },
+  "homepage": "https://github.com/Pavithra954/tink-her-hack-3-temp#readme",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "mongodb": "^6.12.0",
+    "mongoose": "^8.9.5",
+    "nodemon": "^3.1.9"
+  }
+}

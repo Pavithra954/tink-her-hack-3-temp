@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OURHOOD</title>
+  <style>
+    /* Your existing styles */
+    @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      font-family: 'Righteous', sans-serif;
+      font-size: 3rem;
+      background-color: transparent;
+      padding: 1rem;
+      z-index: 1000;
+      text-align: left;
+      width: 100%;
+      color: #4CAF50;
+    }
+
+    .tagline {
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    .black-bar {
+      background-color: #333;
+      height: 25px;
+      width: 100%;
+      margin-top: 140px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      flex-grow: 1;
+      margin-top: 4rem;
+    }
+
+    .block {
+      background-color: white;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 25%;
+      min-width: 200px;
+      text-align: center;
+      padding: 2rem;
+      transition: transform 0.3s ease;
+      box-sizing: border-box;
+    }
+
+    .block:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .block h2 {
+      color: #4CAF50;
+      margin-bottom: 1rem;
+    }
+    .block p {
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+    .availability {
+      position: absolute;
+      bottom: -200%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      border-top: 2px solid #ddd;
+      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+      display:none;
+      
+      transition: transform 1s ease;
+    }
+
+    .block:hover .availability {
+      display: block;
+      transform: translateY(-100%);
+      
+    }
+    .availability p {
+      margin: 0.5rem 0;
+      
+    }
+    .place-order-btn {
+      background-color: white;
+      color: #4CAF50;
+      border: 2px solid white;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+      margin-top: 1rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .place-order-btn:hover {
+      background-color: #45a049;
+      color: white;
+     
+    }
+    .add-donation-box {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #4CAF50;
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .add-donation-box:hover {
+      transform: scale(1.1);
+      background-color: #45a049;
+    }
+
+    .form-container {
+      display: none; /* Hidden by default */
+      max-width: 500px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container.active {
+      display: block; /* Show form when active */
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .form-group button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .form-group button:hover {
+      background-color: #45a049;
+    }
+    .event-box {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #4CAF50;
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .event-box:hover {
+      transform: scale(1.1);
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      OURHOOD
+      <div class="tagline">Together for a better community</div>
+      
+    </div>
+  </header>
+  <div class="black-bar"></div>
+  <div class="container">
+    <div class="block">
+      <h2>Cloth</h2>
+      <p>Donate clothes for those in need.</p>
+      <div class="availability">
+        
+        <button class="place-order-btn">Check Availability</button>
+      </div>
+    </div>
+    <div class="block">
+      <h2>Books</h2>
+      <p>Share knowledge by donating books.</p>
+      <div class="availability">
+       
+        <button class="place-order-btn">Check Availability</button>
+      </div>
+    </div>
+    <div class="block">
+      <h2>Furniture</h2>
+      <p>Help others furnish their homes.</p>
+      <div class="availability">
+        
+        <button class="place-order-btn">Check Availability</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="add-donation-box" onclick="showDonationForm()">
+    Add Donation
+  </div>
+
+  <div class="form-container" id="donation-form">
+    <h1>Donation Form</h1>
+    <form action="/submit-donation" method="POST">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+      </div>
+      <div class="form-group">
+        <label for="address">Address</label>
+        <textarea id="address" name="address" placeholder="Your Address" rows="3" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+      </div>
+      <div class="form-group">
+        <label for="donation-type">Type of Donation</label>
+        <select id="donation-type" name="donation-type" required>
+          <option value="">Select</option>
+          <option value="cloth">Cloth</option>
+          <option value="books">Books</option>
+          <option value="furniture">Furniture</option>
+        </select>
+      </div>
+      <button type="submit">Submit Donation</button>
+    </form>
+  </div>
+
+  <div class="event-box">
+    Donations
+  </div>
+  <script>
+    function showDonationForm() {
+      document.getElementById('donation-form').classList.add('active');
+    }
+  </script>
+</body>
+</html>

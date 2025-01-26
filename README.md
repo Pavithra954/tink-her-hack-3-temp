@@ -36,16 +36,6 @@ For Software:
                Visual Studio Code
 
 
-### Implementation
-For Software:
-# Installation
-[commands]
-
-# Run
-[commands]
-
-### Project Documentation
-For Software:
 
 # Screenshots 
 ![Homepage_ourhood](https://github.com/user-attachments/assets/866e109e-be91-4815-8059-80e5ad8c2cfd)
@@ -69,9 +59,6 @@ For Software:
 ![ourdonation_ourhood](https://github.com/user-attachments/assets/67bd9efb-b6a3-4acf-9427-2ef9784338eb)
 *feature to donate*
 
-# Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
 
 
 
@@ -90,16 +77,15 @@ For Software:
 
 ### Project Demo
 # Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
+https://youtu.be/0R1xoAZ51hI
+*How "OURHOOD" works*
 
-# Additional Demos
-[Add any extra demo materials/links]
+
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- Pavithra: Home Page, Backend
+- Niranjana: Event page
+- Megha mariya shinoj: Donations page
 
 ---
 Made with ❤️ at TinkerHub

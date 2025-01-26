@@ -67,7 +67,7 @@ For Software:
 *Donation page*
 
 ![ourdonation_ourhood](https://github.com/user-attachments/assets/67bd9efb-b6a3-4acf-9427-2ef9784338eb)
-*feature to add own donation*
+*feature to donate*
 
 # Diagrams
 ![Workflow](Add your workflow/architecture diagram here)
